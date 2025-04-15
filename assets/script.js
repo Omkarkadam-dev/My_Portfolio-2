@@ -42,3 +42,21 @@ const aboutObserver = new IntersectionObserver((entries) => {
 });
 
 aboutObserver.observe(aboutContent);
+
+
+// Animate project cards on scroll
+const projectCards = document.querySelectorAll('.project-card');
+
+const projectObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+    }
+  });
+}, {
+  threshold: 0.3,
+});
+
+projectCards.forEach(card => {
+  projectObserver.observe(card);
+});
