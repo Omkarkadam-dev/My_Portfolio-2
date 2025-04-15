@@ -60,3 +60,35 @@ const projectObserver = new IntersectionObserver((entries) => {
 projectCards.forEach(card => {
   projectObserver.observe(card);
 });
+
+
+// Auto slide testimonial cards
+let testimonialIndex = 0;
+const testimonials = document.querySelectorAll('.testimonial-card');
+
+function showNextTestimonial() {
+  testimonials.forEach(card => card.classList.remove('active'));
+  testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+  testimonials[testimonialIndex].classList.add('active');
+}
+
+setInterval(showNextTestimonial, 5000);
+
+// Optional: show first on load
+testimonials[0].classList.add('active');
+
+
+// Reveal testimonials on scroll
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+
+const testimonialObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+    }
+  });
+}, {
+  threshold: 0.3,
+});
+
+testimonialCards.forEach(card => testimonialObserver.observe(card));
