@@ -92,3 +92,19 @@ const testimonialObserver = new IntersectionObserver((entries) => {
 });
 
 testimonialCards.forEach(card => testimonialObserver.observe(card));
+
+
+// Fade-in animation for the CTA section
+const ctaSection = document.querySelector('.cta');
+
+const ctaObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+    }
+  });
+}, {
+  threshold: 0.3,
+});
+
+ctaObserver.observe(ctaSection);
