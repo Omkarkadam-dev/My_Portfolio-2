@@ -108,3 +108,26 @@ const ctaObserver = new IntersectionObserver((entries) => {
 });
 
 ctaObserver.observe(ctaSection);
+
+
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    // Get form data
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+  
+    // Basic validation
+    if (!name || !email || !message) {
+      alert("Please fill out all fields.");
+      return;
+    }
+  
+    // Display a success message (for demo)
+    alert("Thank you for reaching out! Your message has been sent.");
+    
+    // Reset form
+    document.getElementById("contact-form").reset();
+  });
+  
