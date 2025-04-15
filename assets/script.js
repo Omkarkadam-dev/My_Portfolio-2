@@ -130,4 +130,15 @@ document.getElementById("contact-form").addEventListener("submit", function(even
     // Reset form
     document.getElementById("contact-form").reset();
   });
+
+  
+  // Smooth Scroll for Footer Links
+document.querySelectorAll('.footer-links a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
   
