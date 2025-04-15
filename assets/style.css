@@ -469,8 +469,9 @@
   }
 
   
-  .cta {
-    background: linear-gradient(45deg, #00fff7, #0d0d0d);
+  /* CTA Section */
+.cta {
+    background: linear-gradient(120deg, #0f0f0f, #1e1e1e); /* Black background gradient */
     padding: 80px 20px;
     text-align: center;
     color: #fff;
@@ -479,6 +480,7 @@
     overflow: hidden;
   }
   
+  /* Blurred Circle Animation */
   .cta::before {
     content: '';
     position: absolute;
@@ -493,6 +495,7 @@
     z-index: 0;
   }
   
+  /* Animation for Circle */
   @keyframes cta-blur {
     0% {
       transform: translate(-50%, -50%) scale(1);
@@ -505,27 +508,33 @@
     }
   }
   
+  /* CTA Content Styling */
   .cta-content {
     z-index: 1;
   }
   
+  /* Title Styling */
   .cta-title {
     font-size: 2.5rem;
     margin-bottom: 15px;
+    font-weight: 700;
   }
   
+  /* Subtitle Styling */
   .cta-subtitle {
     font-size: 1.1rem;
     margin-bottom: 30px;
     color: #ccc;
   }
   
+  /* Button Group Styling */
   .cta-buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
   }
   
+  /* Button Styling */
   .cta-btn {
     display: inline-flex;
     align-items: center;
@@ -542,31 +551,37 @@
     margin-right: 8px;
   }
   
+  /* Primary Button Styling */
   .cta-btn-primary {
     background: #00fff7;
     color: #000;
   }
   
+  /* Secondary Button Styling */
   .cta-btn-secondary {
     background: transparent;
     border: 2px solid #00fff7;
     color: #00fff7;
   }
   
+  /* Button Hover Effects */
   .cta-btn:hover {
     transform: scale(1.1);
     box-shadow: 0 0 10px #00fff7, 0 0 30px rgba(0, 255, 247, 0.2);
   }
   
+  /* Primary Button Hover */
   .cta-btn-primary:hover {
     background: #00e6dc;
   }
   
+  /* Secondary Button Hover */
   .cta-btn-secondary:hover {
     background: #00fff7;
     color: #000;
   }
   
+  /* Mobile Styles */
   @media (max-width: 768px) {
     .cta-title {
       font-size: 2rem;
@@ -581,24 +596,8 @@
       font-size: 0.95rem;
     }
   }
+  
 
-  
-  /* Global Styling */
-body {
-    font-family: 'Arial', sans-serif;
-    color: #fff;
-    background-color: #111;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  section {
-    margin: 0;
-    padding: 20px;
-    position: relative;
-  }
-  
   /* Contact Section */
   .contact {
     background: linear-gradient(120deg, #0f0f0f, #1e1e1e);
